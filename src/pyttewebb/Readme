@@ -1,0 +1,11 @@
+Version 0.1
+Name: Readme
+
+This file will contain more information for each distribution, meaning: information will or can differ between versions.
+
+
+Content:
+To use the server you will need to setup a default httpPath if you don't, a default value will be set (C:\http).
+Other then that a portnumber is also needed, if no value is given the default port will be 8080.
+
+Usage: PytteWebb <port> <httppath>
