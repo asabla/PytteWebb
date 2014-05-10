@@ -49,7 +49,6 @@ public class TCPServer
         
         while(true)
         {
-            //http://cs.au.dk/~amoeller/WWW/javaweb/server.html
             try
             {
                 clientSocket = serversocket.accept();
@@ -64,14 +63,6 @@ public class TCPServer
                 
                 String request = reader.readLine();    //Get requestcommand to string
                 log(clientSocket, request);     //Prints a logmessage
-                /*
-                final String request = reader.readLine();    //Get requestcommand to string
-                log(clientSocket, request);     //Prints a logmessage
-                
-                new Thread(new Runnable() { public void run()
-                    { try { HandleRequest(request); }
-                        catch(Exception e) { e.printStackTrace(); } }
-                }).start();*/
                 
                 HandleRequest(request);
             } catch(IOException e) { errlog(e.getMessage()); }   //If something went wrong it will prints out a message
@@ -84,7 +75,7 @@ public class TCPServer
     }
     
     /**
-     * This function let you handle a request, meaning it will be validated meanwhile it also will be handled.<br />
+     * Hanldes a request at the same time it validates the request.<br />
      * @param Request received from the socketclient
      */
     private void HandleRequest(String Request)
